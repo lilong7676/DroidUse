@@ -53,6 +53,8 @@ APK 位于 app/build/outputs/apk/debug/。CI 自动生成临时 debug 签名，�
 
 ## 本次验证记录
 
-- `git diff --check` 通过。
+- DroidUse 自有修改的 `git diff --check` 通过；完整上游导入保留部分既有空白字符，Windows wrapper 在连接上传时采用 CRLF。
 - 本地构建在下载 Gradle 7.2 时遇到 `Network is unreachable`，未进入编译；当前环境仅有 JDK 17 且缺少 Android SDK，不能据此判定源码构建成功。
-- GitHub Actions 构建及真机安装结果待完成后记录。
+- [GitHub Actions #2](https://github.com/lilong7676/DroidUse/actions/runs/34438037988) 构建成功，验证提交 `ca80ebd07245ce412e1ae2249687126b38ea1ad2`，日志记录 145 项终端测试 PASSED。
+- 构建产物 `droiduse-foundation-debug` 已上传，包含各架构与 universal 的 debug APK，保留至 2026-09-17。
+- 真机安装、bootstrap 和 Shell 执行仍待验证，本阶段不声明已在目标手机跑通。
