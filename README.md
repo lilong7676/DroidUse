@@ -11,7 +11,9 @@
 
 ## 当前进度
 
-项目处于规划与基础可行性验证准备阶段，尚未引入 Termux 源码，也没有可用 APK。
+当前分支已引入 Termux v0.118.3 基础源码，尚未完成构建和真机验收，也尚未接入 AI 或手机控制能力。
+
+- [上游基线、构建说明与验收清单](docs/termux-baseline.md)
 
 - [项目文档](docs/DroidUse-project.md)
 - [实现与迭代计划](docs/DroidUse-implementation-plan.md)
