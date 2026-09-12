@@ -588,6 +588,7 @@ public final class TermuxActivity extends Activity implements ServiceConnection 
         TerminalSession currentSession = getCurrentSession();
         if (currentSession == null) return;
 
+        menu.add(Menu.NONE, 9001, Menu.NONE, "DroidUse 手机能力");
         boolean autoFillEnabled = mTerminalView.isAutoFillEnabled();
 
         menu.add(Menu.NONE, CONTEXT_MENU_SELECT_URL_ID, Menu.NONE, R.string.action_select_url);
@@ -618,6 +619,10 @@ public final class TermuxActivity extends Activity implements ServiceConnection 
     public boolean onContextItemSelected(MenuItem item) {
         TerminalSession session = getCurrentSession();
 
+        if (item.getItemId() == 9001) {
+            startActivity(new android.content.Intent(this, com.termux.app.droiduse.PhoneToolsActivity.class));
+            return true;
+        }
         switch (item.getItemId()) {
             case CONTEXT_MENU_SELECT_URL_ID:
                 mTermuxTerminalViewClient.showUrlSelection();
