@@ -1,9 +1,9 @@
 name: Android foundation
 on:
   push:
-    branches: [main, feat/termux-foundation]
+    branches: [main, feat/termux-foundation, feat/shizuku-bridge]
   pull_request:
-    branches: [main]
+    branches: [main, feat/termux-foundation]
   workflow_dispatch:
 permissions:
   contents: read
